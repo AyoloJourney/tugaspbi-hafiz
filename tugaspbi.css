@@ -1,0 +1,212 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2f2f40;
+}
+
+.kotak {
+    width: 800px;
+    min-height: 500px;
+}
+
+#navigasi {
+    display: flex;
+    background-color: rgb(47, 47, 64);
+    color: white;
+    font-size: 1.1em;
+}
+
+.navigasitools {
+    margin-right: 30px;
+    transition: transform 0.3s;
+    font-weight: bold;
+    transition: scale 0.3s ease;
+    cursor: pointer;
+}
+
+.navigasitools:hover {
+    scale: 1.1;
+}
+
+#content {
+    color: white;
+}
+
+.active{
+    color: #f4a019;
+    scale: 1;
+}
+
+#circle {
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: orange;
+    margin-left: 200px;
+    position: relative;
+}
+
+#isihome {
+    margin-top: 50px;
+    display: flex;
+}
+
+#salam {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+#salam, #nama{
+    padding: 0px;
+    margin: 0px;
+    transition: color 0.3s ease;
+}
+
+#salam:hover, #nama:hover{
+    color: rgb(200, 200, 200);
+}
+
+#nama {
+    font-size: 30px;
+}
+
+#hubungi {
+    display: inline-flex;
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    font-size: 1.3em;
+    transition: scale 0.3s ease-in;
+    cursor: pointer;
+    
+    animation-duration: 2s;
+    animation-name: animasihubungi;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+@keyframes animasihubungi{
+    0%{
+        scale: 1;
+    }50%{
+        scale: 1.1;
+    }100%{
+        scale: 1;
+    }
+}
+
+#hubungi:hover {
+    opacity: 0.8;
+}
+
+/* pakai @  */
+
+#isicontact {
+    margin-top: 50px;
+    color: white;
+    /* border: 5px solid orange; */
+    padding: 20px;
+    width: 500px;
+    border-radius: 10px;
+    position: relative;
+    background-color: #2f2f40;
+}
+
+@property --sudut{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+#isicontact::after, #isicontact::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--sudut),red,blue);
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 5px;
+    animation: spin 10s linear infinite;
+
+}
+
+#isicontact::before {
+    filter: blur(1.5rem);
+    opacity: 0.7;
+}
+
+@keyframes spin{
+    from {
+        --sudut: 0deg;
+    } to {
+        --sudut: 360deg;
+    }
+}
+
+.percontact {
+    display: flex;
+}
+
+.logo {
+    width: 30px;
+    fill: white;
+    margin-right: 5px;
+    transition: 0.4s ease;
+}
+
+.logo:hover {
+    scale: 1.2;
+}
+
+.rightarrow {
+    height: 23px;
+    width: 23px;
+    fill: white;
+    margin-left: 5px;
+}
+
+#foto {
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 85%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 85%);
+    width: 230px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease;
+}
+
+#foto:hover {
+    scale: 1.01;
+}
+
+#contactme {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    background-color: #ffffff;
+    color: #2f2f40;
+    border-radius: 10px;
+}
+
+#contactme:hover {
+    opacity: 0.9;
+    scale: 1.05;
+}
+
